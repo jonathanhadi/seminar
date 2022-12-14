@@ -9,7 +9,8 @@ import (
 )
 
 func GetProductFromAPI() entity.Result {
-	request, err := http.NewRequest("POST", "http://localhost:8080/api/v1/products", nil)
+	// change my method type
+	request, err := http.NewRequest(http.MethodGet, "http://localhost:8080/api/v1/products", nil)
 	if err != nil {
 		fmt.Println(err)
 	}
