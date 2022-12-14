@@ -9,7 +9,7 @@ import (
 )
 
 func GetProductFromAPI() entity.Result {
-	request, err := http.NewRequest("GET", "http://localhost:8080/api/v1/products", nil)
+	request, err := http.NewRequest("POST", "http://localhost:8080/api/v1/products", nil)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -40,7 +40,7 @@ func main() {
 	message := GetProductFromAPI().Message
 	result := GetProductFromAPI().Result
 
-	fmt.Println("message: ", message)
+	fmt.Println("message:", message)
 	if len(result) != 0 {
 		fmt.Println("products: ")
 		for i := 0; i < len(result); i++ {
